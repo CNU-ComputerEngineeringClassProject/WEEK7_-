@@ -45,7 +45,7 @@ int main() {
 	funcB에서는 id가 B인 Test객체 r을 생성한다. 그리고 "Exception from funcB!\n"를 인자로 하는 runtime_error type 예외객체가 생성되어 던져진다.(예외발생)
 	예외가 발생하면 stack unwinding과정을 통해 catch문 예외핸들러가 있는 main으로 실행흐름이 바뀌어야한다.
 
-	stack unwinding은 funcB에서 예외가 발생하면 funcB의 이후 코드를 실행하지않고 바로 그 함수를 호출한 funcA영역으로 예외데이터가 전달하고,
+	실습1 코드로 설명하자면 stack unwinding는 funcB에서 예외가 발생하면 funcB의 이후 코드를 실행하지않고 바로 그 함수를 호출한 funcA영역으로 예외데이터를 전달하고,
 	funcA함수에서도 예외를 처리하지 못하면 함수를 호출한 main영역으로 예외데이터가 전달되는 과정이다. 이때, 예외데이터를 전달하면 전달한 함수는 종료된다.
 
 	그래서 funcB의 내부에 있는 출력문이 출력되지않고 바로 함수가 종료된다. 
