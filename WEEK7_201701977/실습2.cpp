@@ -14,7 +14,7 @@ int main() {
 		funcA();
 	}
 	catch (std::out_of_range& e) {
-		std::cout << "Exception : Invalid Input!!" << std::endl;
+		std::cout << "Exception : "<< e.what() << std::endl;
 	}
 	
 	return 0;
